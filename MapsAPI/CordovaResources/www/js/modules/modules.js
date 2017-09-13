@@ -85,7 +85,7 @@ ymaps.modules.define('fs', ['vow'], function (provide, vow) {
 });
 
 ymaps.modules.define('fs.cache', ['fs', 'vow'], function (provide, fs, vow) {
-    var CACHE_DIR = cordova.file.cacheDirectory;
+    var CACHE_DIR = cordova.file.tempDirectory; // WKWebView has access only to tmp folder
 
     function download (url, path, mimeType) {
         return new vow.Promise(function (resolve, reject) {
